@@ -10,7 +10,7 @@ def recursivelistdir(path):
 					ans.append(os.path.join(x, y))
 		return sorted(set(ans))
 	except PermissionError:
-		return ["NO ACCESS TO " + path]
+		return ["NO ACCESS TO: {0}".format(path)]
 
 def create_list(path, listfilename="list.txt", levelmarker = '—\\'):
 	with open(os.path.join(path, listfilename), mode='w+', encoding='utf8') as f:
